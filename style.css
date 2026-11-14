@@ -1,0 +1,296 @@
+/* ===== Variabel ===== */
+:root {
+  --bg: #eaf0ef;
+  --surface: #ffffff;
+  --ink: #14262b;
+  --muted: #566b70;
+  --teal: #0f6b6b;
+  --teal-soft: #cfe6e3;
+  --yellow-soft: #f8e7a6;
+  --coral-soft: #f7cfc4;
+  --radius: 18px;
+  --font:
+    "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+/* ===== Reset ringan ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+a {
+  color: inherit;
+}
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
+/* ===== Tata letak dasar (HP) ===== */
+main,
+.site-header,
+.site-footer {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* ===== Header ===== */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 1rem;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.nav {
+  display: flex;
+  gap: 1.25rem;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+}
+.nav a:hover {
+  color: var(--teal);
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding-block: 2rem 1.5rem;
+}
+.hero h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  max-width: 18ch;
+}
+.hero p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  max-width: 46ch;
+}
+
+/* ===== Judul bagian ===== */
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 2rem 0 1rem;
+}
+
+/* ===== Grid kartu: 1 kolom di HP ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ===== Kartu ===== */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.card h3 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.card p {
+  color: var(--muted);
+}
+.meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: auto;
+}
+
+.card--featured {
+  background: var(--teal);
+  color: #fff;
+}
+.card--featured p,
+.card--featured .meta {
+  color: #d6ecea;
+}
+.card--featured h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.card--note {
+  background: transparent;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+}
+
+.card--about {
+  background: var(--teal-soft);
+}
+.card--about h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+.card--about p {
+  color: var(--ink);
+  max-width: 60ch;
+}
+.about {
+  margin-top: 2rem;
+}
+
+/* ===== Tag kategori ===== */
+.tag {
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+.tag--teal {
+  background: var(--teal-soft);
+  color: var(--teal);
+}
+.tag--yellow {
+  background: var(--yellow-soft);
+  color: #6b5400;
+}
+.tag--coral {
+  background: var(--coral-soft);
+  color: #8a2f1b;
+}
+.card--featured .tag {
+  background: #fff;
+  color: var(--teal);
+}
+
+/* ===== Tombol ===== */
+.btn {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: var(--teal);
+}
+.card--featured .btn {
+  background: #fff;
+  color: var(--teal);
+}
+.card--featured .btn:hover {
+  background: var(--yellow-soft);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 2.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== iPad (>= 768px) ===== */
+@media (min-width: 768px) {
+  main,
+  .site-header,
+  .site-footer {
+    padding-inline: 2rem;
+  }
+
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero {
+    padding-block: 3.5rem 2rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .grid--small {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card--featured {
+    grid-column: span 2;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ===== Laptop (>= 1024px) ===== */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 3.75rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .card--featured {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .card--featured h3 {
+    font-size: 1.9rem;
+  }
+}
+
+/* ===== Hormati preferensi gerak ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn {
+    transition: none;
+  }
+}
